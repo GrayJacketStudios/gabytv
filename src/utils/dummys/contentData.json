@@ -1,0 +1,18 @@
+[
+    {
+        "id": "ee73b7f6-3f2b-11ec-9bbc-0242ac130002",
+        "title": "Beeny & Joon",
+        "photo": "https://2.bp.blogspot.com/-CPsjNj0bN2g/T8OwBvfGfVI/AAAAAAAAOWc/AWcanBMvKrM/s1600/Benny___Joon_(MGM,_1993).jpg",
+        "synopsis": "Benjamin \"Benny\" Pearl and his mentally ill sister Juniper \"Joon\" Pearl live together following the accidental death of their parents. Joon joins a poker game at the house belonging to a friend of Benny's named Mike, and loses a bet that commits Mike's cousin Sam to live with the Pearls. Benny is initially angry, but after an evening with Sam at the local diner and then coming home the next day to find Sam has cleaned the house, Benny decides Sam should stay.",
+        "type": "Film",
+        "duration": 5880
+    },
+    {
+        "id": "ee73bb16-3f2b-11ec-9bbc-0242ac130002",
+        "title": "Dexter",
+        "photo": "https://r2.abcimg.es/resizer/resizer.php?imagen=https%3A%2F%2Fstatic1.abc.es%2Fmedia%2Fcapitulos%2F000%2F017%2F050%2Fpiloto-1.jpg&nuevoancho=690&medio=abc",
+        "synopsis": "Forensic analyst Dexter Morgan hides his double life as a vigilante serial killer from his vice squad officer sister, his coworkers at the Miami Metro Police Department, and his commitment-minded single-mom girlfriend.",
+        "type": "Series",
+        "duration": 3180
+    }
+]
