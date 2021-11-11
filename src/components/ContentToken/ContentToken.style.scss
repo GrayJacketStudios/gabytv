@@ -1,0 +1,16 @@
+
+
+.accordion-body {
+    overflow: auto;
+    .contentTokenImage {
+        float: left;
+        width: 10rem;
+        padding-right: 0.5em;
+    }
+
+    p {
+        float: none;
+        text-align: justify;
+        padding-right: 0.5em;
+    }
+}

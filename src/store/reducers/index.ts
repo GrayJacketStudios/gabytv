@@ -1,7 +1,8 @@
 import { combineReducers } from "redux"
 import contentReducer from "./contentReducers";
 
-
-export default combineReducers({
-    contentReducer
+export const rootReducer = combineReducers({
+    contentReducer: contentReducer
 });
+
+export type RootState = ReturnType<typeof rootReducer>;

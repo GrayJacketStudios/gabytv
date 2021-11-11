@@ -13,6 +13,16 @@
         "photo": "https://r2.abcimg.es/resizer/resizer.php?imagen=https%3A%2F%2Fstatic1.abc.es%2Fmedia%2Fcapitulos%2F000%2F017%2F050%2Fpiloto-1.jpg&nuevoancho=690&medio=abc",
         "synopsis": "Forensic analyst Dexter Morgan hides his double life as a vigilante serial killer from his vice squad officer sister, his coworkers at the Miami Metro Police Department, and his commitment-minded single-mom girlfriend.",
         "type": "Series",
-        "duration": 3180
+        "duration": 3180,
+        "chapter": 1
+    },
+    {
+        "id": "ee12fg16-3f2b-11ec-9bbc-0242ac130002",
+        "title": "Greys Anatomy",
+        "photo": "https://clarovideocdn6.clarovideo.net/SERIES/GREYSANATOMY-01-01-00/EXPORTACION_WEB/SS/GREYSANATOMY-01-01-00WVERTICAL.jpg?size=200x300",
+        "synopsis": "Forensic analyst Dexter Morgan hides his double life as a vigilante serial killer from his vice squad officer sister, his coworkers at the Miami Metro Police Department, and his commitment-minded single-mom girlfriend.",
+        "type": "Series",
+        "duration": 3180,
+        "chapter": 1
     }
 ]

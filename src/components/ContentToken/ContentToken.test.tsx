@@ -1,13 +1,12 @@
-import React from 'react';
 import '@testing-library/react/dont-cleanup-after-each';
 import { render, screen, cleanup } from '@testing-library/react';
-import ContentCard from '.';
+import ContentToken from '.';
 
 
 describe("Renders the card element and try to get things from it", () =>{
     beforeAll(() => {
         render(
-            <ContentCard 
+            <ContentToken 
                 id="409c17c2-3e86-11ec-9bbc-0242ac130002"
                 title="testing title" 
                 type="Program" 
@@ -30,12 +29,6 @@ describe("Renders the card element and try to get things from it", () =>{
     test('if the image have the title alt', () => {
         const imgElement = screen.getByAltText(/testing title/i);
         expect(imgElement).toHaveAttribute('src');
-    });
-
-    test('if we have card class on it', () => {
-        const cardElement = screen.getByTestId('cardContainer');
-        expect(cardElement).toHaveClass('card');
-        expect(cardElement).toHaveClass('contentCardBody');
     });
 
     test('if we display the type of content', () => {
