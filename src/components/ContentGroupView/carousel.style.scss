@@ -1,0 +1,47 @@
+.contentContainer {
+    display: flex;
+    position: relative;
+    padding: 0 5em;
+    overflow: visible;
+    &:hover {
+        .item {
+            transform: translateX(-2%);
+        }
+    }
+
+    
+
+    
+}
+
+
+.item {
+    display: inline-block;
+    position: relative;
+    flex: 0 0 1em;
+    margin: 0 2px;
+    transition: transform 300ms ease 100ms;
+    &:hover ~ {
+        transform: translateX(5%);
+    }
+}
+
+button[data-direction] {
+    top: calc(40% - 17px);
+    width: 50px;
+    height: 50px;
+    display: block;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    background: url('https://cdn.dsmcdn.com/web/production/slick-arrow.svg') no-repeat center;
+}
+
+button[data-direction='left'] { /* Left button */
+    left: -55px;
+    transform: rotateZ(180deg);
+}
+
+button[data-direction='right'] { /* Right button */
+    right: -55px;
+}
