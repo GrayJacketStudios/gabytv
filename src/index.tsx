@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, Store } from "redux"
 import { Provider } from "react-redux"
 import thunk from "redux-thunk"
-import reducers from './store/reducers';
+import { rootReducer }  from './store/reducers';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -11,7 +11,7 @@ import reportWebVitals from './reportWebVitals';
 
 const store: Store & {
   dispatch: DispatchType
-} = createStore(reducers, applyMiddleware(thunk));
+} = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>

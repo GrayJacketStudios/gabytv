@@ -1,13 +1,16 @@
-$widthCard: 13rem;
-
+$widthCard: 12.5rem;
+@media screen and (max-width: 460px) {
+    $widthCard: 8rem;
+}
 .contentCardBody {
+    display: inline-block;
     width: $widthCard;
     margin: 1rem;
     box-shadow: 0.2em 0.2em 0.5em gray;
     transition: 0.2s;
     background-color: rgb(253, 253, 253);
     &:hover {
-        width: $widthCard*1.2;
+        width: $widthCard*1.25;
         transition: 0.3s;
         box-shadow: 0.05em 0.05em 0.5em gray;
         .durationDisplay {
