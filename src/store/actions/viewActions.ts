@@ -13,4 +13,11 @@ export const updateView = (page: string = 'home') => {
     return updateViewState(page);
 }
 
+export const goBackView = () => {
+    return (dispatch: any, getState: any) => {
+        const { viewReducer: previousPage } = getState();
+        dispatch(updateViewState(previousPage));
+    }
+}
+
 

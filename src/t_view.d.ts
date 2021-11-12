@@ -1,6 +1,7 @@
   
   type ViewState = {
-    currentPage: string
+    currentPage: string,
+    previousPage: string
   }
   
   type ViewAction = {
