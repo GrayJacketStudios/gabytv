@@ -3,11 +3,14 @@ interface IContent {
     title: string,
     photo: string,
     synopsis: string,
-    type: "Film" | "Series" | "Program" | "Commercial Spot",
+    type: Type,
     duration: number,
     chapter?: number
   }
   
+
+  type Type = "Film" | "Series" | "Program" | "Commercial Spot"
+
   type ContentState = {
     contents: IContent[]
   }
