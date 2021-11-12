@@ -29,7 +29,7 @@ export default function ContentCard({title, photo, synopsis, type, duration, cha
                 </Container>
             </Card.Header>
             <div className='imageContainer'>
-                <Card.Img variant='top' src={photo} alt={`image of ${title}`} />
+                <Card.Img variant='top' src={photo} alt={title} />
                 <Card.Text className={`synopsis ${activeSynopsis}`}>
                     {shortener(synopsis, 320)}
                 </Card.Text>

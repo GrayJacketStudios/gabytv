@@ -1,7 +1,10 @@
 import React from 'react'
 import { Container, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { useDispatch } from 'react-redux';
+import { updateView } from '../../store/actions/viewActions';
 
 export default function NavbarMenu() {
+    const dispatch = useDispatch();
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
@@ -12,19 +15,18 @@ export default function NavbarMenu() {
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                 >
-                    <Nav.Link href="#action1">Home</Nav.Link>
-                    <Nav.Link href="#action2">Link</Nav.Link>
-                    <NavDropdown title="Link" id="navbarScrollingDropdown">
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                        Something else here
-                    </NavDropdown.Item>
+                    <Nav.Link onClick={() => dispatch(updateView('home'))}>Home</Nav.Link>
+                    <NavDropdown title="Content type" id="navbarScrollingDropdown">
+                        <NavDropdown.Item href="#action3">Films</NavDropdown.Item>
+                        <NavDropdown.Item href="#action3">Series</NavDropdown.Item>
+                        <NavDropdown.Item href="#action3">Programs</NavDropdown.Item>
+                        <NavDropdown.Item href="#action4">Commercial Spots</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href="#" disabled>
-                    Link
-                    </Nav.Link>
+                    <NavDropdown title="Content..." id="navbarScrollingDropdown">
+                        <NavDropdown.Item onClick={() => dispatch(updateView('addContent'))}>Add content</NavDropdown.Item>
+                        <NavDropdown.Item href="#action3">Edit content</NavDropdown.Item>
+                        <NavDropdown.Item href="#action3">Delete content</NavDropdown.Item>
+                    </NavDropdown>
                 </Nav>
                 <Form className="d-flex">
                     <FormControl

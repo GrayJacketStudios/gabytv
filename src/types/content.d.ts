@@ -18,3 +18,5 @@ interface IContent {
   }
   
   type DispatchType = (args: ContentAction) => ContentAction
+
+  
