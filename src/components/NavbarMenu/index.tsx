@@ -22,11 +22,7 @@ export default function NavbarMenu() {
                         <NavDropdown.Item href="#action3">Programs</NavDropdown.Item>
                         <NavDropdown.Item href="#action4">Commercial Spots</NavDropdown.Item>
                     </NavDropdown>
-                    <NavDropdown title="Content..." id="navbarScrollingDropdown">
-                        <NavDropdown.Item onClick={() => dispatch(updateView('addContent'))}>Add content</NavDropdown.Item>
-                        <NavDropdown.Item href="#action3">Edit content</NavDropdown.Item>
-                        <NavDropdown.Item href="#action3">Delete content</NavDropdown.Item>
-                    </NavDropdown>
+                    <Nav.Link onClick={() => dispatch(updateView('addContent'))}>Add content</Nav.Link>
                 </Nav>
                 <Form className="d-flex">
                     <FormControl
