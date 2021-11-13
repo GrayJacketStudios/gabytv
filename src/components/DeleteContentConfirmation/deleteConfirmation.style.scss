@@ -1,0 +1,21 @@
+
+.deleteContainer {
+    border: 0.1rem solid #ff7c11;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: rgba($color: #fc2424, $alpha: 0.4);
+
+
+    .title {
+        text-align: left;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: red;
+    }
+
+    .contentTitle {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ff1111;
+    }
+}

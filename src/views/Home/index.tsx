@@ -7,7 +7,7 @@ export default function Home() {
     const { contentReducer }: { contentReducer: ContentState }  = useSelector((state: RootState) => state, shallowEqual);
 
     return (
-        <div>
+        <div className='containerView'>
             <ContentGroupView listName="General Content" listContent={contentReducer} />
         </div>
     )

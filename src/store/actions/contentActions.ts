@@ -3,7 +3,7 @@ import {
     UPDATE_CONTENT_STATE,
     SET_ACTIVE_CONTENT
 } from "../types/contentTypes"
-import { goBackView } from "./viewActions"
+import { goBackView, updateView } from "./viewActions"
 
 const updateContentState = (contents: IContent[]): ContentAction => {
     return {
@@ -36,7 +36,7 @@ const editContent = (content: IContent) => {
     }
 }
 
-export const setCurrentContent = ({id, title, photo, synopsis, type, duration, chapter}: IContent) => {
+export const setCurrentContent = ({id, title, photo, synopsis, type, duration, chapter}: IContent): ContentAction => {
     return {
         type: SET_ACTIVE_CONTENT,
         payload: [{ 
@@ -61,10 +61,11 @@ export const saveContent = (content: IContent) => {
     }
 }
 
-export const removeContent = (content: IContent) => {
+export const removeContent = (id: string) => {
     return (dispatch: any, getState: any) => {
         const { contentReducer: { contents }}: { contentReducer: ContentState } = getState();
-        dispatch(updateContentState(contents.filter((cont: IContent) => cont.id !== content.id)));
+        dispatch(updateContentState(contents.filter((cont: IContent) => cont.id !== id)));
+        dispatch(updateView('home'))
     }
 }
 

@@ -20,7 +20,7 @@ export default function ContentBoard({title, photo, synopsis, type, duration, ch
                     <Button variant="primary" onClick={() => dispatch(goBackView())}><i className="bi bi-arrow-left"></i></Button>
                 </Col>
                 <Col>
-                    <Button variant="danger">Delete content</Button>
+                    <Button variant="danger"  onClick={() => dispatch(updateView('deleteContent'))}>Delete content</Button>
                     <Button variant="primary"  onClick={() => dispatch(updateView('editContent'))}>Edit content</Button>
                 </Col>
             </Row>
