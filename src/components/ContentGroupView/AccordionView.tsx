@@ -8,7 +8,7 @@ export default function AccordionView({listContent}: {listContent: ContentState}
         >
             {listContent.contents.map((content: IContent) => {
                 return (
-                    <ContentToken {...content} />
+                    <ContentToken key={content.id} {...content} />
                 )
             })}
         </Accordion>

@@ -16,7 +16,7 @@ const FormEditContent: React.FunctionComponent<IContent> = ({id, title, type, ph
         photo: photo,
         synopsis: synopsis,
         duration: duration,
-        chapter: chapter
+        chapter: chapter || 0
     });
 
     const [formDuration, setFormDuration] = React.useState<{hours: number, minutes: number, seconds: number}>(secondsToObjectTime(duration));

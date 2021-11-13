@@ -1,17 +1,17 @@
 import React from 'react';
 import '@testing-library/react/dont-cleanup-after-each';
 import { render, screen, cleanup } from '@testing-library/react';
-import ContentCard from '.';
+import ContentBoard from '.';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { rootReducer } from '../../store/reducers';
 
 
-describe("Renders the card element and try to get things from it", () =>{
+describe("Renders the board element and try to get things from it", () =>{
     beforeAll(() => {
         render(
             <Provider store={createStore(rootReducer)}>
-                <ContentCard 
+                <ContentBoard 
                     id="409c17c2-3e86-11ec-9bbc-0242ac130002"
                     title="testing title" 
                     type="Program" 
@@ -38,19 +38,13 @@ describe("Renders the card element and try to get things from it", () =>{
         expect(imgElement).toHaveAttribute('src');
     });
 
-    test('if we have card class on it', () => {
-        const cardElement = screen.getByTestId('cardContainer');
-        expect(cardElement).toHaveClass('card');
-        expect(cardElement).toHaveClass('contentCardBody');
-    });
-
     test('if we display the type of content', () => {
         const typeElement = screen.getByText(/Program/i);
         expect(typeElement).toBeInTheDocument();
     });
 
     test('if we give it a chapter, it will display it belognside the title', () => {
-        const titleWithChapterElement = screen.getByText(/testing title - 5/i);
+        const titleWithChapterElement = screen.getByText(/testing title - Chapter 5/i);
         expect(titleWithChapterElement).toBeInTheDocument();
     });
 

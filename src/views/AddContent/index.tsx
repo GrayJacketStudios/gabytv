@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import FormEditContent from '../components/FormEditContent'
-import './forms.style.scss'
+import FormEditContent from '../../components/FormEditContent'
+import '../forms.style.scss'
 
 export default function AddContent() {
     return (

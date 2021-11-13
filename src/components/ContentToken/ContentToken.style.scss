@@ -13,4 +13,15 @@
         text-align: justify;
         padding-right: 0.5em;
     }
+
+    .expand {
+        font-size: 1rem;
+        transition: 0.2s;
+        color: black;
+        &:hover {
+            font-size: 1.2rem;
+            transition: 0.2s;
+            color: rgb(0, 0, 255);
+        }
+    }
 }
