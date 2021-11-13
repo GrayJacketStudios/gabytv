@@ -1,6 +1,7 @@
 import { enableChapterControl } from "../../components/FormEditContent/formControl"
 import {
-    UPDATE_CONTENT_STATE
+    UPDATE_CONTENT_STATE,
+    SET_ACTIVE_CONTENT
 } from "../types/contentTypes"
 import { goBackView } from "./viewActions"
 
@@ -35,6 +36,20 @@ const editContent = (content: IContent) => {
     }
 }
 
+export const setCurrentContent = ({id, title, photo, synopsis, type, duration, chapter}: IContent) => {
+    return {
+        type: SET_ACTIVE_CONTENT,
+        payload: [{ 
+            id, 
+            title, 
+            photo, 
+            synopsis, 
+            type, 
+            duration, 
+            chapter
+        }]
+    }
+}
 
 export const saveContent = (content: IContent) => {
     if (enableChapterControl(content.type))

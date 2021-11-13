@@ -6,6 +6,8 @@ import { RootState } from './store/reducers';
 import Home from './views/Home';
 import NavbarMenu from './components/NavbarMenu';
 import AddContent from './views/AddContent';
+import SingleContent from './views/SingleContent';
+import UpdateContent from './views/UpdateContent';
 
 
 function App() {
@@ -18,6 +20,10 @@ function App() {
         return <Home />;
       case 'addContent':
         return <AddContent />
+      case 'singleContent':
+        return <SingleContent />
+      case 'editContent':
+        return <UpdateContent />
     }
   };
 

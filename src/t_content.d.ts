@@ -12,7 +12,8 @@ interface IContent {
   type Type = "Film" | "Series" | "Program" | "Commercial Spot"
 
   type ContentState = {
-    contents: IContent[]
+    contents: IContent[],
+    activeContent: IContent,
   }
   
   type ContentAction = {

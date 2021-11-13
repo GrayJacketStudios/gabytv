@@ -1,5 +1,6 @@
 import {
-    UPDATE_CONTENT_STATE
+    UPDATE_CONTENT_STATE,
+    SET_ACTIVE_CONTENT
 } from "../types/contentTypes";
 
 import dummyData from "../../utils/dummys/contentData.json";
@@ -26,13 +27,24 @@ const loadDummyData = (): IContent[] => {
 }
 
 const initialState: ContentState = {
-    contents: loadDummyData()
+    contents: loadDummyData(),
+    activeContent: {
+        id: "",
+        title: "",
+        synopsis: "",
+        photo: "",
+        type: "Film",
+        duration: 0,
+        chapter: 0,
+    }
 };
 
 export default function contentReducer(state: ContentState = initialState, action: ContentAction): ContentState {
     switch(action.type){
         case UPDATE_CONTENT_STATE:
             return { ...state, contents: [ ...action.payload ] };
+        case SET_ACTIVE_CONTENT:
+            return { ...state, activeContent: action.payload[0] };
     }
     return state;
 }

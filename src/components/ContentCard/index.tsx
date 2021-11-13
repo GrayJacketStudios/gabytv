@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { Card, Col, Container, Row } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { setCurrentContent } from '../../store/actions/contentActions';
+import { updateView } from '../../store/actions/viewActions';
 import { shortener } from '../../utils/text';
 import { secondsToReadablehms } from '../../utils/time';
 import './ContentCard.style.scss'
@@ -7,8 +10,8 @@ import './ContentCard.style.scss'
 /**
  * Functional component where we display a card with basic information of the content
  */
-export default function ContentCard({title, photo, synopsis, type, duration, chapter}: IContent) : JSX.Element {
-
+export default function ContentCard({id, title, photo, synopsis, type, duration, chapter}: IContent) : JSX.Element {
+    const dispatch = useDispatch();
     const [activeSynopsis, setActiveSynopsis] = useState<"" | "active">("");
 
     const handleClickOnCard = () => {
@@ -16,6 +19,11 @@ export default function ContentCard({title, photo, synopsis, type, duration, cha
             setActiveSynopsis("");
         else
             setActiveSynopsis("active");
+    }
+
+    const handleExpand = () => {
+        dispatch(setCurrentContent({id, title, photo, synopsis, type, duration, chapter}));
+        dispatch(updateView('singleContent'))
     }
 
     return (
@@ -37,7 +45,14 @@ export default function ContentCard({title, photo, synopsis, type, duration, cha
             
             <Card.Body>
                 <Card.Title className="contentTitle">
-                    {shortener(title, 20)} {chapter?`- ${chapter}`:''}
+                    <Row>
+                        <Col md={10}>
+                            {shortener(title, 20)} {chapter?`- ${chapter}`:''}
+                        </Col>
+                        <Col md={2}>
+                            <i className="bi bi-arrows-angle-expand expand" onClick={handleExpand}></i>
+                        </Col>
+                    </Row>
                 </Card.Title>
             </Card.Body>
             
