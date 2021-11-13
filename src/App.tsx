@@ -8,6 +8,7 @@ import NavbarMenu from './components/NavbarMenu';
 import AddContent from './views/AddContent';
 import SingleContent from './views/SingleContent';
 import UpdateContent from './views/UpdateContent';
+import DeleteContent from './views/DeleteContent';
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         return <SingleContent />
       case 'editContent':
         return <UpdateContent />
+      case 'deleteContent':
+        return <DeleteContent />
     }
   };
 

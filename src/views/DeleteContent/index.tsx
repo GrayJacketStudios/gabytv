@@ -1,16 +1,14 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import { shallowEqual, useSelector } from 'react-redux';
-import FormEditContent from '../../components/FormEditContent'
 import { RootState } from '../../store/reducers';
-import '../general.style.scss'
+import DeleteContentConfirmation from '../../components/DeleteContentConfirmation'
 
-export default function UpdateContent() {
+export default function DeleteContent() {
     const { contentReducer: { activeContent } }: { contentReducer: ContentState }  = useSelector((state: RootState) => state, shallowEqual);
     return (
-        <Container className='containerView'>
-            <h3>Editing content</h3>
-            <FormEditContent {...activeContent} />
+        <Container className="containerView">
+            <DeleteContentConfirmation {...activeContent} />
         </Container>
     )
 }
