@@ -1,7 +1,8 @@
 import { enableChapterControl } from "../../components/FormEditContent/formControl"
 import {
     UPDATE_CONTENT_STATE,
-    SET_ACTIVE_CONTENT
+    SET_ACTIVE_CONTENT,
+    SEARCH_CONTENT
 } from "../types/contentTypes"
 import { goBackView, updateView } from "./viewActions"
 
@@ -18,6 +19,13 @@ const addContent = (content: IContent) => {
         content.id = generateUUID();
         dispatch(updateContentState([...contents, content]))
         dispatch(goBackView());
+    }
+}
+
+const updateSearchContent = (searchTerm: string) => {
+    return {
+        type: SEARCH_CONTENT,
+        payload: searchTerm
     }
 }
 
@@ -68,6 +76,18 @@ export const removeContent = (id: string) => {
         dispatch(updateView('home'))
     }
 }
+
+export const searchContent = (search: string) => {
+    return (dispatch: any, getState: any) => {
+        const { viewReducer: { currentPage }}: { viewReducer: ViewState } = getState();
+        if (currentPage !== 'viewSearchResult') //Dont need to update the view if we are already on the search result page
+            dispatch(updateView('viewSearchResult'));
+        if(search === "")
+            dispatch(goBackView())
+        dispatch(updateSearchContent(search));
+    }
+}
+        
 
 /**
  * Function to generate a UUID, as per https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
