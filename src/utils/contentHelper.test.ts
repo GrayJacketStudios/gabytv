@@ -24,4 +24,15 @@ describe("Check the functionality of getMaxCarouselCards", () => {
         expect(result[0].title).toBe("Star Wars: Ewok Adventures");
     });
 
+    it("Search with difference in Caps by synopsis", () => {
+        const result: IContent[] =  getContentBySynopsis(content, "the towani family");
+        expect(result.length).toBe(1);
+        expect(result[0].title).toBe("Star Wars: Ewok Adventures");
+    });
+
+    it("Search with difference in Caps by title", () => {
+        const result: IContent[] =  getContentByTitle(content, "ewok");
+        expect(result.length).toBe(1);
+        expect(result[0].title).toBe("Star Wars: Ewok Adventures");
+    });
 })
