@@ -9,7 +9,7 @@ import AddContent from './views/AddContent';
 import SingleContent from './views/SingleContent';
 import UpdateContent from './views/UpdateContent';
 import DeleteContent from './views/DeleteContent';
-import ContentType from './views/ContentType/ContentType';
+import ContentType from './views/ContentType';
 
 
 function App() {

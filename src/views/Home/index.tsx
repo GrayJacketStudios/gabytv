@@ -2,7 +2,7 @@ import React from 'react'
 import { shallowEqual, useSelector } from 'react-redux';
 import { RootState } from '../../store/reducers';
 import ContentGroupView from '../../components/ContentGroupView'
-import ContentType from '../ContentType/ContentType';
+import ContentType from '../ContentType';
 
 export default function Home() {
     const { contentReducer: { contents } }: { contentReducer: ContentState }  = useSelector((state: RootState) => state, shallowEqual);
