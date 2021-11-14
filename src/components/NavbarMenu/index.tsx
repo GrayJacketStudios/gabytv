@@ -1,10 +1,13 @@
 import React from 'react'
 import { Container, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap'
-import { useDispatch } from 'react-redux';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { searchContent } from '../../store/actions/contentActions';
 import { updateView } from '../../store/actions/viewActions';
+import { RootState } from '../../store/reducers';
 
 export default function NavbarMenu() {
     const dispatch = useDispatch();
+    const { contentReducer: { search } }: { contentReducer: ContentState }  = useSelector((state: RootState) => state, shallowEqual);
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
@@ -26,10 +29,12 @@ export default function NavbarMenu() {
                 </Nav>
                 <Form className="d-flex">
                     <FormControl
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
+                        type="search"
+                        placeholder="Search"
+                        className="me-2"
+                        aria-label="Search"
+                        value={search}
+                        onChange={(e) => dispatch(searchContent(e.target.value))}
                     />
                 </Form>
                 </Navbar.Collapse>

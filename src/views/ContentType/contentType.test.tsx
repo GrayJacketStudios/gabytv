@@ -12,6 +12,7 @@ import { rootReducer } from '../../store/reducers';
 
 describe("Renders the Films content type and do some tests", () =>{
     beforeAll(() => {
+        jest.spyOn(console, 'error').mockImplementation(() => {});//Disabled console.warn as the carousel package throw an abnoxious warning
         render(
             <Provider store={createStore(rootReducer)}>
                 <ContentType.Films /> 
@@ -37,6 +38,7 @@ describe("Renders the Films content type and do some tests", () =>{
 
 describe("Renders the Series content type and do some tests", () =>{
     beforeAll(() => {
+        jest.spyOn(console, 'error').mockImplementation(() => {});//Disabled console.warn as the carousel package throw an abnoxious warning
         render(
             <Provider store={createStore(rootReducer)}>
                 <ContentType.Series /> 
@@ -62,6 +64,7 @@ describe("Renders the Series content type and do some tests", () =>{
 
 describe("Renders the Commercial Spot content type and do some tests", () =>{
     beforeAll(() => {
+        jest.spyOn(console, 'error').mockImplementation(() => {});//Disabled console.warn as the carousel package throw an abnoxious warning
         render(
             <Provider store={createStore(rootReducer)}>
                 <ContentType.CommercialSpots /> 
@@ -87,6 +90,7 @@ describe("Renders the Commercial Spot content type and do some tests", () =>{
 
 describe("Renders the Program content type and do some tests", () =>{
     beforeAll(() => {
+        jest.spyOn(console, 'error').mockImplementation(() => {});//Disabled console.warn as the carousel package throw an abnoxious warning
         render(
             <Provider store={createStore(rootReducer)}>
                 <ContentType.Programs /> 

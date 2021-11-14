@@ -14,11 +14,12 @@ interface IContent {
   type ContentState = {
     contents: IContent[],
     activeContent: IContent,
+    search: string,
   }
   
   type ContentAction = {
     type: string
-    payload: IContent[]
+    payload: IContent[] | string
   }
   
   type DispatchType = (args: ContentAction) => ContentAction

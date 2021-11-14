@@ -36,7 +36,8 @@ function App() {
           return <ContentType.Programs />
       case 'viewCSpots':
         return <ContentType.CommercialSpots />
-    
+      case 'viewSearchResult':
+        return <ContentType.SearchContent />
     }
   };
 
