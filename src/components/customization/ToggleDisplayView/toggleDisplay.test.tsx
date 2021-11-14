@@ -4,7 +4,7 @@ import { render, screen, cleanup } from '@testing-library/react';
 import ToggleDisplayView from '.';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { rootReducer } from '../../store/reducers';
+import { rootReducer } from '../../../store/reducers';
 
 
 describe("Renders the toggle button to check on it", () =>{

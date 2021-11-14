@@ -1,8 +1,8 @@
 import React from 'react'
 import { Form } from 'react-bootstrap'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { updateDisplaySetting } from '../../store/actions/viewActions';
-import { RootState } from '../../store/reducers';
+import { updateDisplaySetting } from '../../../store/actions/viewActions';
+import { RootState } from '../../../store/reducers';
 import './toggleDisplayView.style.scss';
 
 export default function ToggleDisplayView() {
@@ -17,7 +17,6 @@ export default function ToggleDisplayView() {
                 defaultChecked={showListView}
                 onChange={() => dispatch(updateDisplaySetting('showListView', !showListView ))}
             />
-            {showListView}
         </div>
     )
 }
