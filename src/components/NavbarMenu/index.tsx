@@ -17,10 +17,10 @@ export default function NavbarMenu() {
                 >
                     <Nav.Link onClick={() => dispatch(updateView('home'))}>Home</Nav.Link>
                     <NavDropdown title="Content type" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="#action3">Films</NavDropdown.Item>
-                        <NavDropdown.Item href="#action3">Series</NavDropdown.Item>
-                        <NavDropdown.Item href="#action3">Programs</NavDropdown.Item>
-                        <NavDropdown.Item href="#action4">Commercial Spots</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => dispatch(updateView('viewFilms'))}>Films</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => dispatch(updateView('viewSeries'))}>Series</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => dispatch(updateView('viewPrograms'))}>Programs</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => dispatch(updateView('viewCSpots'))}>Commercial Spots</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link onClick={() => dispatch(updateView('addContent'))}>Add content</Nav.Link>
                 </Nav>

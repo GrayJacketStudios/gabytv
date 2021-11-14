@@ -4,7 +4,7 @@ import { getMaxCarouselCards } from '../../utils/carousel';
 import ContentCard from '../ContentCard';
 import './carousel.style.scss'
 
-export default function CarouselView({listContent}: {listContent: ContentState}) {
+export default function CarouselView({listContent}: {listContent: IContent[]}) {
     return (
         <Carousel
             className="contentContainer" 
@@ -13,7 +13,7 @@ export default function CarouselView({listContent}: {listContent: ContentState})
             transition={0.5} 
             dynamic={true}
         >
-            {listContent.contents.map((content: IContent) => {
+            {listContent.map((content: IContent) => {
                 return (
                     <div key={content.id} className="item">
                         <ContentCard {...content} />

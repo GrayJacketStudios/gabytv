@@ -1,5 +1,6 @@
 import {
-    CHANGE_VIEW
+    CHANGE_VIEW,
+    REVERT_VIEW
 } from "../types/viewTypes"
 
 const updateViewState = (page: string): ViewAction => {
@@ -9,14 +10,16 @@ const updateViewState = (page: string): ViewAction => {
     }
 }
 
+
+
 export const updateView = (page: string = 'home') => {
     return updateViewState(page);
 }
 
 export const goBackView = () => {
-    return (dispatch: any, getState: any) => {
-        const { viewReducer: previousPage } = getState();
-        dispatch(updateViewState(previousPage));
+    return {
+        type: REVERT_VIEW,
+        payload: ''
     }
 }
 

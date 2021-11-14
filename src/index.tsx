@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware, Store } from "redux"
+import { createStore, applyMiddleware, Store, compose } from "redux"
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import { Provider } from "react-redux"
@@ -10,6 +10,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { PersistGate } from 'redux-persist/integration/react';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 
 const persistConfig = {
@@ -21,7 +22,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 const store: Store & {
   dispatch: DispatchType
-} = createStore(persistedReducer, applyMiddleware(thunk));
+} = createStore(persistedReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 const persistor = persistStore(store);
 

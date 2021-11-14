@@ -9,6 +9,7 @@ import AddContent from './views/AddContent';
 import SingleContent from './views/SingleContent';
 import UpdateContent from './views/UpdateContent';
 import DeleteContent from './views/DeleteContent';
+import ContentType from './views/ContentType/ContentType';
 
 
 function App() {
@@ -27,6 +28,15 @@ function App() {
         return <UpdateContent />
       case 'deleteContent':
         return <DeleteContent />
+      case 'viewFilms':
+        return <ContentType.Films />
+      case 'viewSeries':
+        return <ContentType.Series />
+      case 'viewPrograms':
+          return <ContentType.Programs />
+      case 'viewCSpots':
+        return <ContentType.CommercialSpots />
+    
     }
   };
 
