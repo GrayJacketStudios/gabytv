@@ -1,3 +1,5 @@
 export const CHANGE_VIEW = 'CHANGE_VIEW';
 
 export const REVERT_VIEW = 'REVERT_VIEW';
+
+export const UPDATE_DISPLAY_SETTING = 'UPDATE_DISPLAY_SETTING';

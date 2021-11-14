@@ -1,9 +1,10 @@
 import React from 'react'
-import { Container, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Container, Dropdown, Form, FormControl, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { searchContent } from '../../store/actions/contentActions';
 import { updateView } from '../../store/actions/viewActions';
 import { RootState } from '../../store/reducers';
+import ToggleDisplayView from '../ToggleDisplayView';
 
 export default function NavbarMenu() {
     const dispatch = useDispatch();
@@ -27,6 +28,16 @@ export default function NavbarMenu() {
                     </NavDropdown>
                     <Nav.Link onClick={() => dispatch(updateView('addContent'))}>Add content</Nav.Link>
                 </Nav>
+
+                <Dropdown>
+                    <Dropdown.Toggle id="dropdown-settings-menu" >
+                        <i className="bi bi-gear"></i>
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <ToggleDisplayView />
+                    </Dropdown.Menu>
+                </Dropdown>
+                
                 <Form className="d-flex">
                     <FormControl
                         type="search"
