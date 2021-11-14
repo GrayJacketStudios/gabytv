@@ -9,7 +9,7 @@ import dummyData from "../../utils/dummys/contentData.json";
 /**
  * Funcion para rellenar el state con los datos dummy del json
  */
-const loadDummyData = (): IContent[] => {
+export const loadDummyData = (): IContent[] => {
     let contents: IContent[] = [];
     dummyData.forEach((content) => {
         let newContent: IContent = {
