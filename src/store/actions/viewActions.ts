@@ -11,7 +11,7 @@ const updateViewState = (page: string): ViewAction => {
     }
 }
 
-export const updateDisplaySetting = (setting: string, value: boolean) => {
+export const updateDisplaySetting = (setting: string, value: any) => {
     return {
         type: UPDATE_DISPLAY_SETTING,
         payload: {

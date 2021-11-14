@@ -4,7 +4,8 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { searchContent } from '../../store/actions/contentActions';
 import { updateView } from '../../store/actions/viewActions';
 import { RootState } from '../../store/reducers';
-import ToggleDisplayView from '../ToggleDisplayView';
+import BGColorPicker from '../customization/BGColorPicker';
+import ToggleDisplayView from '../customization/ToggleDisplayView';
 
 export default function NavbarMenu() {
     const dispatch = useDispatch();
@@ -35,6 +36,7 @@ export default function NavbarMenu() {
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <ToggleDisplayView />
+                        <BGColorPicker />
                     </Dropdown.Menu>
                 </Dropdown>
                 

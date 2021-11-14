@@ -9,6 +9,7 @@ const initialState: ViewState = {
     previousPage: [],
     displaySettings: {
         showListView: false,
+        backgroundColor: "#f5f5f5",
     }
 };
 
