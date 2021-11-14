@@ -1,6 +1,7 @@
 import {
     CHANGE_VIEW,
-    REVERT_VIEW
+    REVERT_VIEW,
+    UPDATE_DISPLAY_SETTING
 } from "../types/viewTypes"
 
 const updateViewState = (page: string): ViewAction => {
@@ -10,7 +11,15 @@ const updateViewState = (page: string): ViewAction => {
     }
 }
 
-
+export const updateDisplaySetting = (setting: string, value: boolean) => {
+    return {
+        type: UPDATE_DISPLAY_SETTING,
+        payload: {
+            setting,
+            value
+        }
+    }
+}
 
 export const updateView = (page: string = 'home') => {
     return updateViewState(page);
