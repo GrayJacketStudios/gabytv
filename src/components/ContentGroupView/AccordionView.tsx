@@ -2,13 +2,12 @@ import { Accordion } from 'react-bootstrap';
 import ContentToken from '../ContentToken';
 import './accordion.style.scss'
 
-export default function AccordionView({listContent}: {listContent: ContentState}) {
+export default function AccordionView({listContent}: {listContent: IContent[]}) {
     return (
-        <Accordion
-        >
-            {listContent.contents.map((content: IContent) => {
+        <Accordion>
+            {listContent.map((content: IContent) => {
                 return (
-                    <ContentToken {...content} />
+                    <ContentToken key={content.id} {...content} />
                 )
             })}
         </Accordion>

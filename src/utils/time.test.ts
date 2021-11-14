@@ -1,4 +1,4 @@
-import { secondsToReadablehms } from "./time";
+import { secondsToReadablehms, secondsToObjectTime } from "./time";
 
 
 describe('Check if the responses of secondsToReadablehms is valid', () => {
@@ -17,4 +17,30 @@ describe('Check if the responses of secondsToReadablehms is valid', () => {
         expect(secondsToReadablehms(-654)).toBe("invalid time");
     });
 
+});
+
+describe('Check if the response of secondsToObjectTime is valid', () => {
+    it('Return 1 hour when we give 3600 seconds', () => {
+        expect(secondsToObjectTime(3600)).toEqual({
+            hours: 1,
+            minutes: 0,
+            seconds: 0
+        });
+    });
+
+    it('Return 1 hour and 1 minute when we give 3660 seconds', () => {
+        expect(secondsToObjectTime(3660)).toEqual({
+            hours: 1,
+            minutes: 1,
+            seconds: 0
+        });
+    });
+
+    it('Return 1 hour, 1 minute and 1 second when we give 3661 seconds', () => {
+        expect(secondsToObjectTime(3661)).toEqual({
+            hours: 1,
+            minutes: 1,
+            seconds: 1
+        });
+    });
 });

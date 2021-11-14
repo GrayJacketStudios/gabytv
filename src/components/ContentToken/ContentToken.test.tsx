@@ -1,11 +1,15 @@
 import '@testing-library/react/dont-cleanup-after-each';
 import { render, screen, cleanup } from '@testing-library/react';
+import { createStore } from 'redux';
+import { rootReducer } from '../../store/reducers';
 import ContentToken from '.';
+import { Provider } from 'react-redux';
 
 
 describe("Renders the card element and try to get things from it", () =>{
     beforeAll(() => {
         render(
+        <Provider store={createStore(rootReducer)}>
             <ContentToken 
                 id="409c17c2-3e86-11ec-9bbc-0242ac130002"
                 title="testing title" 
@@ -14,7 +18,9 @@ describe("Renders the card element and try to get things from it", () =>{
                 chapter={5}
                 photo="https://2.bp.blogspot.com/-CPsjNj0bN2g/T8OwBvfGfVI/AAAAAAAAOWc/AWcanBMvKrM/s1600/Benny___Joon_(MGM,_1993).jpg"
                 synopsis="this is a testing content card"
-            />);
+            />
+        </Provider>
+            );
     })
 
     afterAll(() => {
