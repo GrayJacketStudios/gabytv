@@ -43,10 +43,10 @@ function App() {
 
 
   return (
-    <>
+    <div style={{backgroundColor: viewReducer?.displaySettings?.backgroundColor}}>
       <NavbarMenu />
       {checkCurrentView()}
-    </>
+    </div>
   );
 }
 
